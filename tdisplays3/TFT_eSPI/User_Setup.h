@@ -35,7 +35,7 @@
 //#define STM_PORTB_DATA_BUS
 
 // Tell the library to use parallel mode (otherwise SPI is assumed)
-#define TFT_PARALLEL_8_BIT
+//#define TFT_PARALLEL_8_BIT
 //#defined TFT_PARALLEL_16_BIT // **** 16 bit parallel ONLY for RP2040 processor ****
 
 // Display type -  only define if RPi display
@@ -52,11 +52,11 @@
 //#define ILI9481_DRIVER
 //#define ILI9486_DRIVER
 //#define ILI9488_DRIVER     // WARNING: Do not connect ILI9488 display SDO to MISO if other devices share the SPI bus (TFT SDO does NOT tristate when CS is high)
-#define ST7789_DRIVER      // Full configuration option, define additional parameters below for this display
+//#define ST7789_DRIVER      // Full configuration option, define additional parameters below for this display
 // #define ST7789_2_DRIVER    // Minimal configuration option, define additional parameters below for this display
 //#define R61581_DRIVER
 //#define RM68140_DRIVER
-//#define ST7796_DRIVER
+#define ST7796_DRIVER
 //#define SSD1351_DRIVER
 //#define SSD1963_480_DRIVER
 //#define SSD1963_800_DRIVER
@@ -83,8 +83,8 @@
 // For ST7789, ST7735, ILI9163 and GC9A01 ONLY, define the pixel width and height in portrait orientation
 // #define TFT_WIDTH  80
 // #define TFT_WIDTH  128
-#define TFT_WIDTH  172 // ST7789 172 x 320
-// #define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
+//#define TFT_WIDTH  172 // ST7789 172 x 320
+#define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
 // #define TFT_HEIGHT 160
 // #define TFT_HEIGHT 128
 // #define TFT_HEIGHT 240 // ST7789 240 x 240
@@ -225,13 +225,14 @@
 //#define TFT_WR 22    // Write strobe for modified Raspberry Pi TFT only
 
 // For the M5Stack module use these #define lines
-//#define TFT_MISO 19
-//#define TFT_MOSI 23
-//#define TFT_SCLK 18
-//#define TFT_CS   14  // Chip select control pin
-//#define TFT_DC   27  // Data Command control pin
-//#define TFT_RST  33  // Reset pin (could connect to Arduino RESET pin)
-#define TFT_BL   38  // LED back-light (required for M5Stack)
+#define TFT_MISO 12
+#define TFT_MOSI 13
+#define TFT_SCLK 14
+#define TFT_CS   15
+#define TFT_DC   21
+#define TFT_RST  22
+#define TFT_BL   23
+
 
 // ######       EDIT THE PINs BELOW TO SUIT YOUR ESP32 PARALLEL TFT SETUP        ######
 
@@ -244,24 +245,24 @@
 // Example below is for ESP32 Parallel interface with UNO displays
 
 // Tell the library to use 8 bit parallel mode (otherwise SPI is assumed)
-#define TFT_PARALLEL_8_BIT
+//#define TFT_PARALLEL_8_BIT
 
 // The ESP32 and TFT the pins used for testing are:
-#define TFT_CS   6  // Chip select control pin (library pulls permanently low
-#define TFT_DC   7  // Data Command control pin - must use a pin in the range 0-31
-#define TFT_RST  5  // Reset pin, toggles on startup
+//#define TFT_CS   6  // Chip select control pin (library pulls permanently low
+//#define TFT_DC   7  // Data Command control pin - must use a pin in the range 0-31
+//#define TFT_RST  5  // Reset pin, toggles on startup
 
-#define TFT_WR    8  // Write strobe control pin - must use a pin in the range 0-31
-#define TFT_RD    -1  // Read strobe control pin
+//#define TFT_WR    8  // Write strobe control pin - must use a pin in the range 0-31
+//#define TFT_RD    -1  // Read strobe control pin
 
-#define TFT_D0   39  // Must use pins in the range 0-31 for the data bus
-#define TFT_D1   40  // so a single register write sets/clears all bits.
-#define TFT_D2   41  // Pins can be randomly assigned, this does not affect
-#define TFT_D3   42  // TFT screen update performance.
-#define TFT_D4   45
-#define TFT_D5   46
-#define TFT_D6   47
-#define TFT_D7   48
+//#define TFT_D0   39  // Must use pins in the range 0-31 for the data bus
+//#define TFT_D1   40  // so a single register write sets/clears all bits.
+//#define TFT_D2   41  // Pins can be randomly assigned, this does not affect
+//#define TFT_D3   42  // TFT screen update performance.
+//#define TFT_D4   45
+//#define TFT_D5   46
+//#define TFT_D6   47
+//#define TFT_D7   48
 
 // ######       EDIT THE PINs BELOW TO SUIT YOUR STM32 SPI TFT SETUP        ######
 
